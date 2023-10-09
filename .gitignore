@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 download_json/
+download_other_items/
+download_men_items/
+download_women_items/
 
 # C extensions
 *.so
