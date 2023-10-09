@@ -14,7 +14,7 @@ res = httpx.get(url="https://www.ssense.com/en-jp/women.json", headers=headers, 
 
 totalPages = json.loads(res.text)["pagination_info"]["totalPages"]
 
-for page in range(205, totalPages + 1):
+for page in range(1, totalPages + 1):
 
     if page == 1:
         json_url = url + ".json"
