@@ -14,21 +14,18 @@ res = httpx.get(url="https://www.ssense.com/en-jp/women.json", headers=headers, 
 
 totalPages = json.loads(res.text)["pagination_info"]["totalPages"]
 
-for page in range(1, totalPages + 1):
+for page in range(152, totalPages + 1):
 
     if page == 1:
         json_url = url + ".json"
-        json_file = httpx.get(url=json_url, headers=headers, timeout=10, verify=False)
-        products = json.loads(json_file.text)["products"]
-        with open("download_json/" + file_name + "page_" + str(page) + ".json", "w") as outfile:
-            outfile.write(json.dumps(products))
-        print(json_url)
-
     else:
         json_url = url + json_name + str(page)
-        json_file = httpx.get(url=json_url, headers=headers, timeout=10, verify=False)
-        products = json.loads(json_file.text)["products"]
-        with open("download_json/" + file_name + "page_" + str(page) + ".json", "w") as outfile:
-            outfile.write(json.dumps(products))
-        print(json_url)
+
+    json_file = httpx.get(url=json_url, headers=headers, timeout=10, verify=False)
+    products = json.loads(json_file.text)["products"]
+    save_name = "download_json/" + file_name + "page_" + str(page) + ".json"
+    with open(save_name, "w", encoding="utf-8") as outfile:
+        js = json.dumps(products, indent=4, ensure_ascii=False)
+        outfile.write(js)
+    print(json_url)
 
