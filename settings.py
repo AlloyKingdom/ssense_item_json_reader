@@ -17,6 +17,10 @@ SSENSE_OTHER = "everything-else"
 EAZY_MODE = 0
 HARD_MODE = 1
 
+# choose your clawer and url
+mode = HARD_MODE
+type = SSENSE_MEN
+
 COOKIES = {
     'FPID': 'FPID2.2.3aiCjKmRvVqWBseNspJAgfe49QMeVJSLEYgCzIbae7I%3D.1645508984',
     'visitorId': 'd0b306db5326e72e81e2839866140113db68e088ba29454938b9f29459ba1c9f',

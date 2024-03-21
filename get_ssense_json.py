@@ -68,6 +68,4 @@ def get_ssense_items_to_json(mode: int, type: str):
 
 if __name__ == "__main__":
 
-    mode = HARD_MODE
-    type = SSENSE_MEN
     get_ssense_items_to_json(mode, type)
