@@ -17,7 +17,7 @@ SSENSE_OTHER = "everything-else"
 EAZY_MODE = 0
 HARD_MODE = 1
 
-# choose your clawer and url
+# choose your crawler and url
 mode = HARD_MODE
 type = SSENSE_MEN
 
