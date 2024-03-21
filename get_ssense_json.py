@@ -3,10 +3,10 @@ import json
 
 from settings import *
 
-url = "https://www.ssense.com/en-jp/everything-else"
+
 json_name = ".json?page="
 page = 1
-file_name = "ssense_everything-else"
+
 
 def get_ssense_items_to_json(mode: int, type: str):
 
@@ -36,7 +36,7 @@ def get_ssense_items_to_json(mode: int, type: str):
 
             json_file = httpx.get(url=json_url, headers=HEADERS_EAZY_MODE, timeout=10, verify=False)
             products = json.loads(json_file.text)["products"]
-            save_name = "download_json/ssense_" + file_name + "_page_" + str(page) + ".json"
+            save_name = SAVE_FOLDER + file_name + "_page_" + str(page) + ".json"
 
             with open(save_name, "w", encoding="utf-8") as outfile:
                 js = json.dumps(products, indent=4, ensure_ascii=False)
@@ -58,7 +58,7 @@ def get_ssense_items_to_json(mode: int, type: str):
 
             json_file = httpx.get(url=json_url, headers=HEADERS_HARD_MODE, cookies=COOKIES, timeout=10, verify=False)
             products = json.loads(json_file.text)["products"]
-            save_name = "download_json/" + file_name + "_page_" + str(page) + ".json"
+            save_name = SAVE_FOLDER + file_name + "_page_" + str(page) + ".json"
 
             with open(save_name, "w", encoding="utf-8") as outfile:
                 js = json.dumps(products, indent=4, ensure_ascii=False)

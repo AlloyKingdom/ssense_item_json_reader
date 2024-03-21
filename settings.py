@@ -1,4 +1,10 @@
 # settings
+# how to convert curl commands to Python? Watch this website: https://curlconverter.com/
+
+# File saving folder, better create it first, name what you like
+SAVE_FOLDER = "download_json/ssense_"
+
+# Define constants
 URL_MEN = "https://www.ssense.com/en-jp/men"
 URL_WOMEN = "https://www.ssense.com/en-jp/women"
 URL_OTHER = "https://www.ssense.com/en-jp/everything-else"
